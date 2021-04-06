@@ -5,7 +5,10 @@ public class Employee {
 	private String name;
 	private String address;
 	
-	
+	public Employee() {
+		
+		
+	}
 	
 	public Employee(int empId, String name, String address) {
 		super();
