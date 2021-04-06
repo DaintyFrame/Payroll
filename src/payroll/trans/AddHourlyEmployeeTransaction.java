@@ -16,4 +16,10 @@ public class AddHourlyEmployeeTransaction implements Transaction {
 		this.hourlyRate = hourlyRate;
 	}
 
+	@Override
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
