@@ -5,6 +5,14 @@ public class Employee {
 	private String name;
 	private String address;
 	
+	
+	
+	public Employee(int empId, String name, String address) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.address = address;
+	}
 	//生成get set 方法
 	public int getEmpId() {
 		return empId;
