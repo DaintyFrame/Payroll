@@ -24,7 +24,11 @@ public class AddEmployeeTest {
 //	}
 	@Test
 	public void testAddHourlyEmployeeTransaction() {
-		
+		//添加小时工基本信息
+		int empId = 1623111006;
+		String name = "zxb";
+		String address = "BZU";
+		double hourlyRate = 88.8;
 		
 	}
 	
