@@ -1,9 +1,12 @@
 package payroll.test;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
 import payroll.trans.AddHourlyEmployeeTransaction;
 
@@ -36,6 +39,10 @@ public class AddEmployeeTest {
 		//--新建添加钟点工操作，并执行--
 		Transaction t = new AddHourlyEmployeeTransaction(empId,name,address,hourlyRate);
 		t.execute();
+		
+		//// 验证执行结果
+		Employee e = PayrollDatabase.getEmployee(empId);	// 根据雇员编号读取雇员记录
+		assertNotNull(e); // 雇员记录存在
 		
 	}
 	
