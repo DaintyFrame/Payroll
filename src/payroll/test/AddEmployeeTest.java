@@ -2,13 +2,18 @@ package payroll.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
 import payroll.Employee;
+import payroll.PaymentClassification;
+import payroll.PaymentMethod;
 import payroll.PayrollDatabase;
 import payroll.Transaction;
+import payroll.classification.HourlyClassification;
+import payroll.method.HoldMethod;
 import payroll.trans.AddHourlyEmployeeTransaction;
 
 
@@ -47,6 +52,12 @@ public class AddEmployeeTest {
 		assertEquals(empId, e.getEmpId()); 	//编号正确
 		assertEquals(name, e.getName()); 	//名字正确
 		assertEquals(address, e.getAddress());	 //地址正确
+		PaymentClassification pc = e.getPaymentClassification();
+		assertTrue(pc instanceof HourlyClassification);	//钟点工
+		HourlyClassification hc = (HourlyClassification) pc;
+		assertEquals(hourlyRate, hc.getHourlyRate(), 0.01);	//小时工资正确
+		PaymentMethod pm = e.getPaymentMethod();
+		assertTrue(pm instanceof HoldMethod);	//支付方式默认为保存支票
 		
 	}
 	
