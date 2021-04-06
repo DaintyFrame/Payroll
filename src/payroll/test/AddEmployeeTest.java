@@ -1,5 +1,6 @@
 package payroll.test;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -40,9 +41,12 @@ public class AddEmployeeTest {
 		Transaction t = new AddHourlyEmployeeTransaction(empId,name,address,hourlyRate);
 		t.execute();
 		
-		//// 验证执行结果
+		// 验证执行结果
 		Employee e = PayrollDatabase.getEmployee(empId);	// 根据雇员编号读取雇员记录
 		assertNotNull(e); // 雇员记录存在
+		assertEquals(empId, e.getEmpId()); 	//编号正确
+		assertEquals(name, e.getName()); 	//名字正确
+		assertEquals(address, e.getAddress());	 //地址正确
 		
 	}
 	
