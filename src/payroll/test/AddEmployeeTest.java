@@ -4,6 +4,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import payroll.Transaction;
+import payroll.trans.AddHourlyEmployeeTransaction;
+
 
 /*
       用例1：增加雇员。
@@ -29,6 +32,10 @@ public class AddEmployeeTest {
 		String name = "zxb";
 		String address = "BZU";
 		double hourlyRate = 88.8;
+		
+		//--新建添加钟点工操作，并执行--
+		Transaction t = new AddHourlyEmployeeTransaction(empId,name,address,hourlyRate);
+		t.execute();
 		
 	}
 	
