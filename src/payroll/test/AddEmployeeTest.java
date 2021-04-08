@@ -15,6 +15,7 @@ import payroll.Transaction;
 import payroll.classifcation.HourlyClassification;
 import payroll.method.HoldMethod;
 import payroll.trans.AddHourlyEmployeeTransaction;
+import payroll.trans.AddSalariedEmployeeTransaction;
 
 
 /*
@@ -67,6 +68,9 @@ public class AddEmployeeTest {
 		String name = "zxb006";
 		String address = "BZUSoft";
 		double salary = 1024.0;
+		
+		Transaction t = new AddSalariedEmployeeTransaction(empId, name, address, salary);
+		t.execute();
 		
 	}
 	
