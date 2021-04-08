@@ -63,7 +63,10 @@ public class AddEmployeeTest {
 	//添加月新雇员
 	@Test
 	public void testAddSalariedEmployee() {
-		
+		int empId = 1623111006;
+		String name = "zxb006";
+		String address = "BZUSoft";
+		double salary = 1024.0;
 		
 	}
 	
