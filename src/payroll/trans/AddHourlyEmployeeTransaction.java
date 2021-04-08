@@ -26,11 +26,15 @@ public class AddHourlyEmployeeTransaction implements Transaction {
 		//新建雇员
 		Employee employee = new Employee(empId,name,address);
 		//设置工资计算方式
-		employee.setPaymentClassification(new HourlyClassification(hourlyRate));
+		employee.setPaymentClassification(getPaymentClassifcaction());
 		//设置工资支付方法
 		employee.setPaymentMethod(new HoldMethod());
 		//保存到数据库
 		PayrollDatabase.save(employee);
+	}
+
+	protected HourlyClassification getPaymentClassifcaction() {
+		return new HourlyClassification(hourlyRate);
 	}
 
 }
