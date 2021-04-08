@@ -60,6 +60,12 @@ public class AddEmployeeTest {
 		assertTrue(pm instanceof HoldMethod);	//支付方式默认为保存支票
 		
 	}
+	//添加月新雇员
+	@Test
+	public void testAddSalariedEmployee() {
+		
+		
+	}
 	
 
 }
