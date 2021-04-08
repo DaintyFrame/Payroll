@@ -1,6 +1,7 @@
 package payroll.trans;
 
 import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
 import payroll.classifcation.HourlyClassification;
 import payroll.method.HoldMethod;
@@ -29,6 +30,7 @@ public class AddHourlyEmployeeTransaction implements Transaction {
 		//设置工资支付方法
 		employee.setPaymentMethod(new HoldMethod());
 		//保存到数据库
+		PayrollDatabase.save(employee);
 	}
 
 }
