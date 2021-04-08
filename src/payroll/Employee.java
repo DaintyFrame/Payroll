@@ -5,6 +5,7 @@ public class Employee {
 	private String name;
 	private String address;
 	private PaymentClassification paymentClassification;
+	private PaymentMethod paymentMethod;
 	
 	public Employee() {
 		
@@ -43,6 +44,15 @@ public class Employee {
 
 	public void setPaymentClassification(PaymentClassification paymentClassification) {
 		this.paymentClassification = paymentClassification;
+	}
+
+	public PaymentMethod getPaymentMethod() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
 	}
 
 	
