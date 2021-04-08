@@ -13,6 +13,7 @@ import payroll.PaymentMethod;
 import payroll.PayrollDatabase;
 import payroll.Transaction;
 import payroll.classifcation.HourlyClassification;
+import payroll.classification.SalariedClassification;
 import payroll.method.HoldMethod;
 import payroll.trans.AddHourlyEmployeeTransaction;
 import payroll.trans.AddSalariedEmployeeTransaction;
@@ -71,6 +72,17 @@ public class AddEmployeeTest {
 		
 		Transaction t = new AddSalariedEmployeeTransaction(empId, name, address, salary);
 		t.execute();
+		
+		Employee e = PayrollDatabase.getEmployee(empId);
+		assertNotNull(e);
+		assertEquals(name, e.getName());
+		assertEquals(address, e.getAddress());
+		PaymentClassification pc = e.getPaymentClassification();
+		assertTrue(pc instanceof SalariedClassification);//1.月薪方式
+		SalariedClassification sc = (SalariedClassification) pc;
+		assertEquals(salary, sc.getSalary(), 0.01);//验证月薪正确
+		PaymentMethod pm = e.getPaymentMethod();
+		assertTrue(pm instanceof HoldMethod);
 		
 	}
 	
