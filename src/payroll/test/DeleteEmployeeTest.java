@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import payroll.Employee;
 import payroll.PayrollDatabase;
 import payroll.Transaction;
+import payroll.exception.NoSuchEmployeeException;
 import payroll.trans.AddHourlyEmployeeTransaction;
 import payroll.trans.DeleteEmployeeTransaction;
 
@@ -27,5 +28,14 @@ class DeleteEmployeeTest {
 //¼ìÑéÉ¾³ý³É¹¦
 		Employee e = PayrollDatabase.getEmployee(empId);
 		assertNull(e);
+	}
+	@Test
+	public void deleteEmployeeNotExists() {
+		int empId = 1623111006;
+		Employee e = PayrollDatabase.getEmployee(empId);
+		assertNull(e);
+		
+		Transaction t = new DeleteEmployeeTransaction(empId);
+		t.execute();
 	}
 }
