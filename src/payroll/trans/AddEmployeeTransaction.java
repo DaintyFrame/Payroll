@@ -10,6 +10,13 @@ public abstract class AddEmployeeTransaction implements Transaction{
 
 	protected int empId;
 
+	public AddEmployeeTransaction(int empId, String name, String address) {
+		super();
+		this.empId = empId;
+		this.name = name;
+		this.address = address;
+	}
+
 	public int getEmpId() {
 		return empId;
 	}
