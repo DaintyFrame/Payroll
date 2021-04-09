@@ -5,7 +5,7 @@ public class NoSuchEmployeeException extends RuntimeException {
 	private String string;
 
 	public NoSuchEmployeeException(String string) {
-		this.string = string;
+		super(string);
 		// TODO Auto-generated constructor stub
 	}
 
