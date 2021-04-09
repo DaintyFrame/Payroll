@@ -25,7 +25,7 @@ public class DeleteEmployeeTransaction implements Transaction {
 		}
 		//else 抛出异常
 		else {
-			throw new NoSuchEmployeeException();
+			throw new NoSuchEmployeeException("没找到雇员"+empId);
 		}
 	}
 
