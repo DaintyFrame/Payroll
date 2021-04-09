@@ -2,7 +2,7 @@ package payroll.trans;
 
 import payroll.PaymentClassification;
 import payroll.Transaction;
-import payroll.classifcation.HourlyClassification;
+import payroll.classification.HourlyClassification;
 
 public class AddHourlyEmployeeTransaction extends AddEmployeeTransaction implements Transaction {
 
@@ -13,8 +13,10 @@ public class AddHourlyEmployeeTransaction extends AddEmployeeTransaction impleme
 		this.hourlyRate = hourlyRate;
 	}
 
+
 	@Override
-	protected PaymentClassification getPaymentClassifcaction() {
+	protected PaymentClassification getPaymentClassificaction() {
+		// TODO Auto-generated method stub
 		return new HourlyClassification(hourlyRate);
 	}
 

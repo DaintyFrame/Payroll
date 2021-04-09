@@ -1,4 +1,4 @@
-package payroll.classifcation;
+package payroll.classification;
 
 import payroll.PaymentClassification;
 

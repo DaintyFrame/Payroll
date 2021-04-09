@@ -41,7 +41,7 @@ public abstract class AddEmployeeTransaction implements Transaction{
 		this.address = address;
 	}
 
-	protected abstract PaymentClassification getPaymentClassifcaction();
+	protected abstract PaymentClassification getPaymentClassificaction();
 
 	private String name;
 	private String address;
@@ -55,7 +55,7 @@ public abstract class AddEmployeeTransaction implements Transaction{
 		//新建雇员
 		Employee employee = new Employee(empId,name,address);
 		//设置工资计算方式
-		employee.setPaymentClassification(getPaymentClassifcaction());
+		employee.setPaymentClassification(getPaymentClassificaction());
 		//设置工资支付方法
 		employee.setPaymentMethod(new HoldMethod());
 		//保存到数据库

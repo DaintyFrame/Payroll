@@ -2,32 +2,21 @@ package payroll.trans;
 
 import payroll.PaymentClassification;
 import payroll.Transaction;
-import payroll.classifcation.HourlyClassification;
-import payroll.classifcation.SalariedClassification;
+import payroll.classification.SalariedClassification;
 
 public class AddSalariedEmployeeTransaction extends AddEmployeeTransaction implements Transaction {
 
 	private double salary;
-	private int empId;
-	private String name;
-	private String address;
 
 	public AddSalariedEmployeeTransaction(int empId, String name, String address, double salary) {
-		this.empId = empId;
-		this.name = name;
-		this.address = address;
+		super(empId,name,address);
 		this.salary = salary;
-		// TODO Auto-generated constructor stub
 	}
-
-	protected PaymentClassification getPaymentClassifcation() {
-		return new SalariedClassification(salary);
-	}
+	
 
 	@Override
-	protected PaymentClassification getPaymentClassifcaction() {
+	protected PaymentClassification getPaymentClassificaction() {
 		// TODO Auto-generated method stub
-		return null;
+		return new SalariedClassification(salary);
 	}
-
 }
