@@ -36,6 +36,12 @@ class DeleteEmployeeTest {
 		assertNull(e);
 		
 		Transaction t = new DeleteEmployeeTransaction(empId);
+		try {
 		t.execute();
+		fail("No such employee.");
+		}catch(Exception e1) {
+			assertTrue(e1 instanceof NoSuchEmployeeException);
+			
+		}
 	}
 }
