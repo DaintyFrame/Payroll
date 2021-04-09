@@ -19,7 +19,6 @@ public abstract class AddEmployeeTransaction {
 		super();
 	}
 
-	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
 		//ÐÂ½¨¹ÍÔ±
