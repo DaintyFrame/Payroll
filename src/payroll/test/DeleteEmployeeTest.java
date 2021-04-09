@@ -1,8 +1,12 @@
 package payroll.test;
 
 
+import static org.junit.Assert.assertNull;
+
 import org.junit.jupiter.api.Test;
 
+import payroll.Employee;
+import payroll.PayrollDatabase;
 import payroll.Transaction;
 import payroll.trans.AddHourlyEmployeeTransaction;
 import payroll.trans.DeleteEmployeeTransaction;
@@ -19,8 +23,8 @@ class DeleteEmployeeTest {
 		new AddHourlyEmployeeTransaction(empId, "zxb-006", "BZUSOFT", 2048.0).execute();
 
 		Transaction t = new DeleteEmployeeTransaction(empId);
-		t.execute();
-
+		t.execute();//É¾³ý
+//¼ìÑéÉ¾³ý³É¹¦
 		Employee e = PayrollDatabase.getEmployee(empId);
 		assertNull(e);
 	}
