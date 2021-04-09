@@ -6,7 +6,7 @@ import payroll.PayrollDatabase;
 import payroll.Transaction;
 import payroll.method.HoldMethod;
 
-public abstract class AddEmployeeTransaction {
+public abstract class AddEmployeeTransaction implements Transaction{
 
 	protected int empId;
 
