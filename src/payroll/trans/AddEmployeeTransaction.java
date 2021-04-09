@@ -8,7 +8,7 @@ import payroll.method.HoldMethod;
 
 public abstract class AddEmployeeTransaction implements Transaction{
 
-	protected int empId;
+	private int empId;
 
 	public AddEmployeeTransaction(int empId, String name, String address) {
 		super();
@@ -43,8 +43,8 @@ public abstract class AddEmployeeTransaction implements Transaction{
 
 	protected abstract PaymentClassification getPaymentClassifcaction();
 
-	protected String name;
-	protected String address;
+	private String name;
+	private String address;
 
 	public AddEmployeeTransaction() {
 		super();
