@@ -14,7 +14,9 @@ public class DeleteEmployeeTransaction implements Transaction {
 	@Override
 	public void execute() {
 		// TODO Auto-generated method stub
-
+		//找到雇员
+		//存在- 删除
+		//else 抛出异常
 	}
 
 }
