@@ -8,6 +8,9 @@ import payroll.classifcation.SalariedClassification;
 public class AddSalariedEmployeeTransaction extends AddEmployeeTransaction implements Transaction {
 
 	private double salary;
+	private int empId;
+	private String name;
+	private String address;
 
 	public AddSalariedEmployeeTransaction(int empId, String name, String address, double salary) {
 		this.empId = empId;
